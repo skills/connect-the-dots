@@ -125,6 +125,7 @@ A SHA is a reference to a specific object. In this case, it's a reference to a c
 
 1. Navigate to the Code tab of this repository
    - _Tip: start this process in a new tab, since you will need it later_
+  
 2. Click `docs` to navigate into the `/docs` directory
 3. Click `_sidebar.md` to view the file
 4. On the top right side of the file, click **Blame** to see the details of the most recent revision
