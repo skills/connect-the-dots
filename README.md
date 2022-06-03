@@ -41,6 +41,13 @@ Have you ever worked in a repository with a lot of history? Perhaps you've had t
 - **How long**: This course is three steps long and takes less than 15 min to complete.
 - **Projects Used**: [GitHub](https://docsify.js.org/#/), a magical documentation site generator.
 
+### How to start this course
+
+<!--
+  <<< Author notes: Start >>>
+  Aaron, I added this header as a place holder for the information you said that you wanted to put in every course.
+-->
+
 </details>
 
 <!--
