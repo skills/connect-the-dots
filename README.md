@@ -52,15 +52,11 @@ Have you ever worked in a repository with a lot of history? Perhaps you've had t
 <details id=1>
 <summary><h2>Step 1: Resolve Duplicate Issues</h2></summary>
 
-### Welcome to "Cross-linking issues and pull requests"! :wave:
-
 GitHub has special capabilities to help reference other information on GitHub. For example, when you reference another issue or pull request by number, that number will be hyperlinked. At the same time, a cross-reference is created in the linked issue or pull request. This two-way reference helps people track the relationship of information across GitHub.
 
 ![a screenshot of an issue linking to a PR, and a PR with a cross-reference to the issue](https://user-images.githubusercontent.com/16547949/67594663-d9710900-f732-11e9-8df8-d3173d952bd5.png)
 
-### Connect the dots in a GitHub repository
-
-Above, you saw a linked issue number in a second issue on GitHub. In this example, the new issue is a duplicate of the previous issue. The cross-reference ability allows you to track these duplications and close issues when appropriate.
+With collaboraration from multiple team members, sometimes issues can be duplicated. In the above example, the new issue is a duplicate of a previous issue. The cross-reference ability allows you to track these duplications and close issues when appropriate.
   
 ### Creating references
 
