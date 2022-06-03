@@ -97,8 +97,6 @@ When you want to create a crosslink, try typing the title of an issue or pull re
 <details id=2>
 <summary><h2>Step 2: Find a commit in history</h2></summary>
 
-### You did Resolve Duplicate Issues! :tada:
-
 An important part of version control is the ability to look into the past. By using `git blame`, and finding the story behind a commit, we're able to do more than _blame_ people for code. We're able to see the story around why a commit was made. What is the associated pull request? Who approved the pull request? What tests were run on that commit before it was merged?
 
 The obvious reason to find things in history is to know about the history. With issues and pull requests, we see a more complete story about about the history, not just just the bare minimum.
@@ -134,30 +132,16 @@ A SHA is a reference to a specific object. In this case, it's a reference to a c
 <details id=3>
 <summary><h2>Step 3: Fix a broken sidebar</h2></summary>
 
-### Nice work finishing Find a commit in history :sparkles:
-
 Thanks for finding that commit! We now know that the sidebar was indeed added, and it was done in that commit. Let's see if we can dig a little deeper to find out if any planning or conversation, using comments, occurred around this change. 
 
-### Context
+As we've already seen, conversations in issues and pull requests can reference other work, but the amount of context goes much further than crosslinks. Remember, Git is version control! For example, the commit that you found in the last step is connected with much more information such as: 
 
-As we've already seen, conversations in issues and pull requests can reference other work.
-
-But the amount of context goes much further than crosslinks. Remember, Git is version control! For example, the commit that you found in the last step is connected with much more information: 
-
-- Who made the commit.
-- What other changes were included.
-- When the commit was made.
-- Which pull request the commit was a part of.
+- Who made the commit
+- What other changes were included
+- When the commit was made
+- Which pull request the commit was a part of
 
 The pull request is important because it goes beyond knowing when a commit happened. You can know _why_ a commit happened. Finding history is not about _blaming_ anyone, but about seeing the bigger picture. Why were decisions made? Who was involved? What were the build outputs and test results for each commit? Who requested changes, and who approved them?
-
-### A story about finding experts
-
-Imagine you find an internal white-paper on a really exciting topic. You're looking for experts to help you research this topic for an upcoming project. When you find this article, you're ecstatic! But, there's no author referenced in the plain text.
-
-You can see that it's written in markdown, and it's versioned in GitHub. It's already a part of the `main` branch, but you want to know who was involved in creating the white-paper. You use `git blame` to see the author(s), and you can find the pull request associated with that branch. Now, you can see who all of the authors were, who the reviewers were, and if there are any other issues or conversations related to this topic.
-
-Just like that, you've found the people at your company who can help move your project forward. :tada:
 
 ### Finding a pull request from a commit
 
