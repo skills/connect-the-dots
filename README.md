@@ -70,7 +70,7 @@ GitHub has special capabilities to help reference other information on GitHub. F
 
 ### Connect the dots in a GitHub repository
 
-Above, you saw a reference to another issue. The other issue references _this_ issue. The other issue appears to be a duplicate, so it would be a good idea to close it.
+Above, you saw a linked issue number in a second issue on GitHub. In this example, the new issue is a duplicate of the previous issue. The cross-reference ability allows you to track these duplications and close issues when appropriate.
   
 ### Creating references
 
