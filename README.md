@@ -50,7 +50,7 @@ Have you ever worked in a repository with a lot of history? Perhaps you've had t
 -->
 
 <details id=1>
-<summary><strong>:zap: Step 1: Resolve Duplicate Issues</strong></summary>
+<summary><h2>Step 1: Resolve Duplicate Issues</h2></summary>
 
 ### Welcome to "Cross-linking issues and pull requests"! :wave:
 
@@ -95,7 +95,7 @@ When you want to create a crosslink, try typing the title of an issue or pull re
 -->
 
 <details id=2>
-<summary><strong>:dart: Step 2: Find a commit in history</strong></summary>
+<summary><h2>Step 2: Find a commit in history</h2></summary>
 
 ### You did Resolve Duplicate Issues! :tada:
 
@@ -132,7 +132,7 @@ A SHA is a reference to a specific object. In this case, it's a reference to a c
 -->
 
 <details id=3>
-<summary><strong>:wrench: Step 3: Fix a broken sidebar</strong></summary>
+<summary><h2>Step 3: Fix a broken sidebar</h2></summary>
 
 ### Nice work finishing Find a commit in history :sparkles:
 
@@ -184,7 +184,7 @@ When you're looking at a commit on GitHub, you can see a lot of information. Fro
 -->
 
 <details id=4>
-<summary><strong>:checkered_flag: Finish</strong></summary>
+<summary><h2>Finish</h2></summary>
 
 ### Congratulations friend, you've completed this course! :tada:
 
