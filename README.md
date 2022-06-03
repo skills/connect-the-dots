@@ -44,7 +44,7 @@ Have you ever worked in a repository with a lot of history? Perhaps you've had t
 ### How to start this course
 
 <!--
-  <<< Author notes: Start >>>
+  <<< Author (Ross) notes: Start >>>
   Aaron, I added this header as a place holder for the information you said that you wanted to put in every course.
 -->
 
@@ -59,18 +59,16 @@ Have you ever worked in a repository with a lot of history? Perhaps you've had t
   TBD-step-1-notes.
 -->
 
-
-
 <details id=1>
 <summary><strong>:zap: Step 1: Resolve Duplicate Issues</strong></summary>
 
-### Cross-linking issues and pull requests
+### Welcome to "Cross-linking issues and pull requests"! :wave:
 
 GitHub has special capabilities to help reference other information on GitHub. For example, when you reference another issue or pull request by number, that number will be hyperlinked. At the same time, a cross-reference is created in the linked issue or pull request. This two-way reference helps people track the relationship of information across GitHub.
 
 ![a screenshot of an issue linking to a PR, and a PR with a cross-reference to the issue](https://user-images.githubusercontent.com/16547949/67594663-d9710900-f732-11e9-8df8-d3173d952bd5.png)
 
-### Welcome to "Connect the dots in a GitHub repository"! :wave:
+### Connect the dots in a GitHub repository
 
 Below, you will see a reference to another issue. The other issue references _this_ issue. The other issue appears to be a duplicate, so it would be a good idea to close it.
   
