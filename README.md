@@ -92,7 +92,7 @@ When you want to create a crosslink, try typing the title of an issue or pull re
 4. Create a new issue
 5. Create a second issue
 6. Link the second issue to the first
-   - _Tip: type `#1` within the comment to turn into a link to your first issue_
+   - _Tip: type `#1` within the comment to add a link to your first issue_
 7. Close issue #2, which is a duplicate of issue #1
 
 </details>
@@ -109,15 +109,15 @@ When you want to create a crosslink, try typing the title of an issue or pull re
 
 ### You did Resolve Duplicate Issues! :tada:
 
-An important part of version control is the ability to look into the past. By using `git blame`, and finding the story behind a commit, we're able to do more than _blame_ people for code. We're able to see the story around why a commit was made - what is the associated pull request? Who approved the pull request? What tests were run on that commit before it was merged?
+An important part of version control is the ability to look into the past. By using `git blame`, and finding the story behind a commit, we're able to do more than _blame_ people for code. We're able to see the story around why a commit was made. What is the associated pull request? Who approved the pull request? What tests were run on that commit before it was merged?
 
-The obvious reason to find things in history is to know about history. With issues and pull requests, we see a more complete story about history - not just the bare minimum.
+The obvious reason to find things in history is to know about history. With issues and pull requests, we see a more complete story about about history, not just just the bare minimum.
 
 ### What's `git blame`?
 
 `git blame` is a Git functionality that shows what revision and author last modified each line of a file. Information like who made a commit, when, and even why can be found this way. If you aren't sure who introduced certain changes to a file, you can use `git blame` to find out. While `git blame` sounds rather accusatory, this can be used to understand the context around decisions.
 
-### What's a SHA?
+### What's a Secure Hash Algorithm (SHA)?
 
 A SHA is a reference to a specific object. In this case, it's a reference to a commit. On GitHub, you can look at a specific commit to see the changes introduced, by whom, and if they were a part of a pull request.
 
