@@ -27,19 +27,19 @@ _This course will teach you skills for finding relevant conversations, commits, 
 **To start this course: [<img width="150" alt="Use this template" src="https://user-images.githubusercontent.com/1221423/148581131-555c0fb8-5361-4450-a760-75fa6219a2fc.png">](https://github.com/InfomagnusOrg/github-connecting-dots/generate)**
 
 > We recommend creating a public repository, as private repositories will [use Actions minutes](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions).<br>
-> After you make your own repository, wait about 20 seconds and refresh. I will go to the next step.
+> After you make your own repository, wait about 20 seconds and refresh. Go to the next step.
 
 Have you ever worked in a repository with a lot of history? Perhaps you've had to track down related issues and pull requests in the past, or you've had to find who committed a particular change. If you've ever found yourself in any of these situations, you'll know how important it is to navigate your workspace.
 
 - **Who is this for**: Developers, GitHub users, users new to Git, students, managers, teams.
 - **What you'll learn**: 
-  - Find relevant issues and pull requests
-  - Search history to find context
-  - Make connections within GitHub to help others find things
-- **What you'll build**: Reposity with existing commits, duplicated isssus and content defect to be fixed.
-- **Prerequisites**: Before you take this course, you may want to go through the [Introduction to GitHub](https://lab.github.com/githubtraining/introduction-to-github) course on Learning Lab. 
+  - Find relevant issues and pull requests.
+  - Search history to find context.
+  - Make connections within GitHub to help others find things.
+- **What you'll build**: Reposity with existing commits, duplicated isssus, and content defect to be fixed.
+- **Prerequisites**: Before you take this course, you may want to go through the [GitHub Quickstart](https://docs.github.com/en/get-started/quickstart) introduction on GitHub Docs. 
 - **How long**: This course is three steps long and takes less than 15 min to complete.
-- **Projects Used**: [docsify](https://docsify.js.org/#/), a magical documentation site generator
+- **Projects Used**: [docsify](https://docsify.js.org/#/), a magical documentation site generator.
 
 </details>
 
@@ -57,9 +57,9 @@ Before you take this course, you may want to go through the [Introduction to Git
 
 In this course, you'll learn how to do lots of things, like:
 
-- Find relevant issues and pull requests
-- Search history to find context
-- Make connections within GitHub to help others find things
+- Find relevant issues and pull requests.
+- Search history to find context.
+- Make connections within GitHub to help others find things.
 
 ### Cross-linking issues and pull requests
 
