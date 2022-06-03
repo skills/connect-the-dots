@@ -85,7 +85,7 @@ When you want to create a crosslink, try typing the title of an issue or pull re
   Aaron, I wrote these steps with the understanding that the learner has some experience with GitHub, so I did not describe the exact buttons or all of the steps involved with creating a PR. This also should help with constant edits for button label changes. Please let me know if you want me to go back and add detailed steps with the buttons, full steps, etc.
 -->  
 
-1. If you have not already, utilize the start function, Use this template
+1. If you have not already, utilize, Use this template, in the Start section
    - _Tip: start this process in a new tab, since you will need it later_
 2. Create a new repository from github-connecting-dots
 3. Navigate to the Issue tab of your repository 
