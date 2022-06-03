@@ -1,16 +1,11 @@
 <!--
   <<< Author notes: Header of the course >>>
-  Include a 1280×640 image, course name in sentence case, and a concise description in emphasis.
-  In your repository settings: enable template repository, add your 1280×640 social image, auto delete head branches.
-  Next to "About", add description & tags; disable releases, packages, & environments.
+  Include a 1280x640 image, course title in sentence case, and a concise description in emphasis.
+  In your repository settings: enable template repository, add your 1280x640 social image, auto delete head branches.
   Add your open source license, GitHub uses Creative Commons Attribution 4.0 International.
 -->
 
-<img src="https://repository-images.githubusercontent.com/206795795/9607e200-586d-11ea-97a7-4ecd37d628fc" width=300 align=right>
-
 # Connect the Dots in a GitHub Repository
-
-_This course will teach you skills for finding relevant conversations, commits, and projects in a repository._
 
 <!--
   <<< Author notes: Start of the course >>>
@@ -21,13 +16,7 @@ _This course will teach you skills for finding relevant conversations, commits, 
   Do not use quotes on the <details> tag attributes.
 -->
 
-<details id=0 open>
-<summary><strong>:golf: Start</strong></summary>
-
-**To start this course: [<img width="150" alt="Use this template" src="https://user-images.githubusercontent.com/1221423/148581131-555c0fb8-5361-4450-a760-75fa6219a2fc.png">](https://github.com/InfomagnusOrg/github-connecting-dots/generate)**
-
-> We recommend creating a public repository, as private repositories will [use Actions minutes](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions).<br>
-> After you make your own repository, wait about 20 seconds and refresh. Go to the next step.
+<!--step0-->
 
 Have you ever worked in a repository with a lot of history? Perhaps you've had to track down related issues and pull requests in the past, or you've had to find who committed a particular change. If you've ever found yourself in any of these situations, you'll know how important it is to navigate your workspace.
 
@@ -39,16 +28,18 @@ Have you ever worked in a repository with a lot of history? Perhaps you've had t
 - **What you'll build**: Reposity with existing commits, duplicated isssus, and content defect to be fixed.
 - **Prerequisites**: Before you take this course, you may want to go through the [GitHub Quickstart](https://docs.github.com/en/get-started/quickstart) introduction on GitHub Docs. 
 - **How long**: This course is three steps long and takes less than 15 min to complete.
-- **Projects Used**: [GitHub](https://docsify.js.org/#/), a magical documentation site generator.
 
-### How to start this course
+## How to start this course
 
-<!--
-  <<< Author (Ross) notes: Start >>>
-  Aaron, I added this header as a place holder for the information you said that you wanted to put in every course.
--->
+1. Above these instructions, right-click **Use this template** and open the link in a new tab.
+   ![Use this template](https://user-images.githubusercontent.com/1221423/169618716-fb17528d-f332-4fc5-a11a-eaa23562665e.png)
+2. In the new tab, follow the prompts to create a new repository.
+   - For owner, choose your personal account or an organization to host the repository.
+   - We recommend creating a public repository—private repositories will [use Actions minutes](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions).
+   ![Create a new repository](https://user-images.githubusercontent.com/1221423/169618722-406dc508-add4-4074-83f0-c7a7ad87f6f3.png)
+3. After your new repository is created, wait about 20 seconds, then refresh the page. Follow the step-by-step instructions in the new repository's README.
 
-</details>
+<!--endstep0-->
 
 <!--
   <<< Author notes: Step 1 >>>
@@ -56,7 +47,6 @@ Have you ever worked in a repository with a lot of history? Perhaps you've had t
   The first step is always the hardest, so pick something easy!
   Link to docs.github.com for further explanations.
   Encourage users to open new tabs for steps!
-  TBD-step-1-notes.
 -->
 
 <details id=1>
