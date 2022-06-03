@@ -130,7 +130,7 @@ A SHA is a reference to a specific object. In this case, it's a reference to a c
 4. On the top right side of the file, click **Blame** to see the details of the most recent revision
 5. Click the commit message, `add sidebar to documentation` to see the commit details
 6. Copy some part of the SHA (at least the first 6 characters of the 40 character hexadecimal string listed after `commit`)
-7. Comment (at least the first 6 characters of) the SHA in **this issue**
+7. Comment, to start the conversation, (at least the first 6 characters of) the SHA in **this issue**
 
 </details>
 
@@ -148,24 +148,24 @@ A SHA is a reference to a specific object. In this case, it's a reference to a c
 
 Thanks for finding that commit! We now know that the sidebar was indeed added, and it was done in that commit. Let's see if we can dig a little deeper to find out if any planning or conversation occurred around this change. 
 
-# Context
+### Context
 
 As we've already seen, conversations in issues and pull requests can reference other work.
 
-But the amount of context goes much further than crosslinks - Remember, Git is version control! For example, the commit that you found in the last step is connected with much more information: 
+But the amount of context goes much further than crosslinks. Remember, Git is version control! For example, the commit that you found in the last step is connected with much more information: 
 
-- Who made the commit
-- What other changes were included
-- When the commit was made
-- Which pull request the commit was a part of
+- Who made the commit.
+- What other changes were included.
+- When the commit was made.
+- Which pull request the commit was a part of.
 
-The pull request is important because it goes beyond knowing when a commit happened - you can know _why_ a commit happened. Finding history is not about _blaming_ anyone, but about seeing the bigger picture. Why were decisions made? Who was involved? What were the build outputs and test results for each commit? Who requested changes, and who approved them?
+The pull request is important because it goes beyond knowing when a commit happened. You can know _why_ a commit happened. Finding history is not about _blaming_ anyone, but about seeing the bigger picture. Why were decisions made? Who was involved? What were the build outputs and test results for each commit? Who requested changes, and who approved them?
 
 ### A story about finding experts
 
 Imagine you find an internal white-paper on a really exciting topic. You're looking for experts to help you research this topic for an upcoming project. When you find this article, you're ecstatic! But, there's no author referenced in the plain text.
 
-You can see that it's written in markdown, and it's versioned in GitHub. It's already a part of the `main` branch, but you want to know who was involved in creating this. You use `git blame` to see the author(s), and you can find the pull request associated with that branch. Now, you can see who all of the authors were, who the reviewers were, and if there are any other issues or conversations related to this topic.
+You can see that it's written in markdown, and it's versioned in GitHub. It's already a part of the `main` branch, but you want to know who was involved in creating the white-paper. You use `git blame` to see the author(s), and you can find the pull request associated with that branch. Now, you can see who all of the authors were, who the reviewers were, and if there are any other issues or conversations related to this topic.
 
 Just like that, you've found the people at your company who can help move your project forward. :tada:
 
