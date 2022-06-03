@@ -87,7 +87,7 @@ When you want to create a crosslink, try typing the title of an issue or pull re
 
 1. Utilize, Use this template, in the Start section, if you have not already
    - _Tip: start this process in a new tab, since you will need it later_
-2. Create a new repository from github-connecting-dots
+2. Create a new repository for github-connecting-dots
 3. Navigate to the Issue tab of your repository 
 4. Create a new issue
 5. Create a second issue
