@@ -39,7 +39,7 @@ Have you ever worked in a repository with a lot of history? Perhaps you've had t
 - **What you'll build**: Reposity with existing commits, duplicated isssus, and content defect to be fixed.
 - **Prerequisites**: Before you take this course, you may want to go through the [GitHub Quickstart](https://docs.github.com/en/get-started/quickstart) introduction on GitHub Docs. 
 - **How long**: This course is three steps long and takes less than 15 min to complete.
-- **Projects Used**: [docsify](https://docsify.js.org/#/), a magical documentation site generator.
+- **Projects Used**: [GitHub](https://docsify.js.org/#/), a magical documentation site generator.
 
 </details>
 
@@ -51,24 +51,17 @@ Have you ever worked in a repository with a lot of history? Perhaps you've had t
   Encourage users to open new tabs for steps!
   TBD-step-1-notes.
 -->
-Welcome to this Learning Lab course about finding your way through the history of GitHub repositories. For example, you could be working in repositories with a lot of history, many collaborators, or many files.
 
-Before you take this course, you may want to go through the [Introduction to GitHub]({{ host }}/{{ course.Owner.login }}/introduction-to-github) course on Learning Lab.
 
-In this course, you'll learn how to do lots of things, like:
 
-- Find relevant issues and pull requests.
-- Search history to find context.
-- Make connections within GitHub to help others find things.
+<details id=1>
+<summary><strong>:zap: Step 1: Resolve Duplicate Issues</strong></summary>
 
 ### Cross-linking issues and pull requests
 
 GitHub has special capabilities to help reference other information on GitHub. For example, when you reference another issue or pull request by number, that number will be hyperlinked. At the same time, a cross-reference is created in the linked issue or pull request. This two-way reference helps people track the relationship of information across GitHub.
 
 ![a screenshot of an issue linking to a PR, and a PR with a cross-reference to the issue](https://user-images.githubusercontent.com/16547949/67594663-d9710900-f732-11e9-8df8-d3173d952bd5.png)
-
-<details id=1>
-<summary><strong>:zap: Step 1: Resolve Duplicate Issues</strong></summary>
 
 ### Welcome to "Connect the dots in a GitHub repository"! :wave:
 
