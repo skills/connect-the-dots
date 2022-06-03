@@ -85,10 +85,10 @@ When you want to create a crosslink, try typing the title of an issue or pull re
   Aaron, I wrote these steps with the understanding that the learner has some experience with GitHub, so I did not describe the exact buttons or all of the steps involved with creating a PR. This also should help with constant edits for button label changes. Please let me know if you want me to go back and add detailed steps with the buttons, full steps, etc.
 -->  
 
-1. Utilize, Use this template, in the Start section, if you have not already
+1. Utilize, **Use this template**, in the Start section, if you have not done so already
    - _Tip: start this process in a new tab, since you will need it later_
 2. Create a new repository for github-connecting-dots
-3. Navigate to the Issue tab of your repository 
+3. Navigate to the **Issue** tab of your repository 
 4. Create a new issue
 5. Create a second issue
 6. Link the second issue to the first
@@ -111,7 +111,7 @@ When you want to create a crosslink, try typing the title of an issue or pull re
 
 An important part of version control is the ability to look into the past. By using `git blame`, and finding the story behind a commit, we're able to do more than _blame_ people for code. We're able to see the story around why a commit was made. What is the associated pull request? Who approved the pull request? What tests were run on that commit before it was merged?
 
-The obvious reason to find things in history is to know about history. With issues and pull requests, we see a more complete story about about history, not just just the bare minimum.
+The obvious reason to find things in history is to know about the history. With issues and pull requests, we see a more complete story about about the history, not just just the bare minimum.
 
 ### What's `git blame`?
 
@@ -123,8 +123,8 @@ A SHA is a reference to a specific object. In this case, it's a reference to a c
 
 ### :keyboard: Activity: Find commit in history
 
-1. Navigate to the Code tab of this repository
-   - _Tip: start this process in a new tab, since you will need it later_
+1. Navigate to the Code tab of your repository
+   - _Tip: you may have previously created your repository in a new tab_
 2. Click `docs` to navigate into the `/docs` directory
 3. Click `_sidebar.md` to view the file
 4. On the top right side of the file, click **Blame** to see the details of the most recent revision
@@ -146,7 +146,7 @@ A SHA is a reference to a specific object. In this case, it's a reference to a c
 
 ### Nice work finishing Find a commit in history :sparkles:
 
-Thanks for finding that commit! We now know that the sidebar was indeed added, and it was done in that commit. Let's see if we can dig a little deeper to find out if any planning or conversation occurred around this change. 
+Thanks for finding that commit! We now know that the sidebar was indeed added, and it was done in that commit. Let's see if we can dig a little deeper to find out if any planning or conversation, using comments, occurred around this change. 
 
 ### Context
 
