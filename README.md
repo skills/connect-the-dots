@@ -80,8 +80,15 @@ When you want to create a crosslink, try typing the title of an issue or pull re
 
 ### :keyboard: Activity: Find and close the cross-linked issue
 
-1. Navigate to the other issue referenced from this issue
-2. Close that issue
+1. If you have not already, utilize the start function, Use this template
+   - _Tip: start this process in a new tab, since you will need it later_
+2. Create a new repository from github-connecting-dots
+3. Navigate to the Issue tab of your repository 
+4. Create a new issue
+5. Create a second issue
+6. Link the second issue to the first
+   - _Tip: type `#1` within the comment to turn into a link to your first issue_
+7. Close issue #2, which is a duplicate of issue #1
 
 </details>
 
