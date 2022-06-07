@@ -71,15 +71,12 @@ When you want to create a crosslink, start typing the title of an issue or pull 
   Aaron, I wrote these steps with the understanding that the learner has some experience with GitHub, so I did not describe the exact buttons or all of the steps involved with creating a PR. This also should help with constant edits for button label changes. Please let me know if you want me to go back and add detailed steps with the buttons, full steps, etc.
 -->  
 
-1. Utilize, **Use this template**, in the Start section, if you have not done so already
-   - _Tip: start this process in a new tab, since you will need it later_
-2. Create a new repository for github-connecting-dots
-3. Navigate to the **Issue** tab of your repository 
-4. Create a new issue
-5. Create a second issue
-6. Link the second issue to the first
+1. Navigate to the **Issue** tab of your repository 
+1. Create a new issue
+1. Create a second issue
+1. Link the second issue to the first
    - _Tip: type `#1` within the comment to add a link to your first issue_
-7. Close issue #2, which is a duplicate of issue #1
+1. Close issue #2, which is a duplicate of issue #1
 
 </details>
 
