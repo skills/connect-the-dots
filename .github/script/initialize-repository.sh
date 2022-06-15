@@ -22,24 +22,11 @@
 git config user.name github-actions
 git config user.email github-actions@github.com
 
-# Fetch all remote branches
-git pull --all
+# Fetch main
+git checkout main
 
-# Create list of all remote branches
-branches=$(git branch -r | grep -v main | sed -r 's/origin\///g' | paste -s -d ' ' -)
+# Create issue #1 from file
+gh issue create --title "Welcome" -F .github/files/issue01.md
 
-# Merge main into each branch
-echo -e "Merge main into each branch\n---"
-for branch in $branches
-do
-    # Dry run by default
-    if [[ $1 = '--dry-run=false' ]]
-    then
-        git checkout "$branch"
-        git pull origin main --no-rebase -X theirs --allow-unrelated-histories --no-edit
-        git push origin "$branch"
-        echo "---"
-    else
-        echo "plan: merge main into $branch"
-    fi
-done
+# Create issue #2 from file
+gh issue create --title "Fix the sidebar" -F .github/files/issue02.md
