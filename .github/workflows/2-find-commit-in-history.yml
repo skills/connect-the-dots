@@ -29,8 +29,11 @@ jobs:
         uses: actions/checkout@v2
       - id: get_step
         run: echo "::set-output name=current_step::$(cat ./.github/script/STEP)"
+      - id: get_find_commit_id
+        run: echo "::set-output name=find_commit_id::$(cat ./.github/files/SIDEBARCOMMIT)"
     outputs:
       current_step: ${{ steps.get_step.outputs.current_step }}
+      find_commit_id: ${{ steps.get_find_commit_id.outputs.find_commit_id }}
       
   on_fix_the_sidebar_issue_comment:
     name: Check if the issue comment is referencing the correct commit ID
@@ -63,7 +66,7 @@ jobs:
         run: echo '${{ toJSON(github.event.issue) }}'
         
       - name: Check if the isuees comments is referencing the required commit ID
-        if: contains(github.event.comment.body, env.FIND_COMMIT_ID)
+        if: contains(github.event.comment.body, needs.find_commit_id.outputs.find_commit_id)
         run: echo 'Found the reference to required commit in the comment'
 
       # Update README to close <details id=2>
