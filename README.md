@@ -167,7 +167,7 @@ When you're looking at a commit on GitHub, you can see a lot of information. Fro
 
 ### :keyboard: Activity: Fix a broken sidebar
 
-1. In the main branch [Edit the `docs/_sidebar.md` file](/edit/docs/_sidebar.md)
+1. In the main branch [Edit the `docs/_sidebar.md` file](/docs/_sidebar.md)
 2. Correct the spelling of the reference `(doc-references__.md)` on line 4 by changing it into `(doc-references.md)`
 3. Commit the changes on the `fix-sidebar` branch
 4. In the [Pull requests tab](/pulls), create a pull request by comparing 'main' branch to 'fix-sidebar' bramch
