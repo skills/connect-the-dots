@@ -82,8 +82,8 @@ When you want to create a crosslink, try typing the title of an issue or pull re
 
 ### :keyboard: Activity: Find and close the cross-linked issue
 
-1. Navigate to the issue #1 (Welcome) referenced from this issue
-2. Type "Duplicate of #2" and close issue #1
+1. Navigate to the issue #1 (Welcome)
+2. Type "Duplicate of #2" as a comment and close issue #1
 
 </details>
 
