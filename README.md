@@ -26,7 +26,7 @@ Have you ever worked in a repository with a lot of history? Perhaps you've had t
   - Search history to find context.
   - Make connections within GitHub to help others find things.
 - **What you'll build**: Reposity with existing commits, duplicated isssus, and content defect to be fixed.
-- **Prerequisites**: Before you take this course, you may want to go through the [GitHub Quickstart](https://docs.github.com/en/get-started/quickstart) introduction on GitHub Docs. 
+- **Prerequisites**: Before you take this course, you may want to go through the [GitHub Quickstart](https://docs.github.com/en/get-started/quickstart) introduction on GitHub Docs and [Introduction to GitHub](https://github.com/skills/introduction-to-github) course on GitHub Skills. 
 - **How long**: This course is three steps long and takes less than 15 min to complete.
 
 ## How to start this course
