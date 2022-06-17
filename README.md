@@ -71,12 +71,8 @@ When you want to create a crosslink, start typing the title of an issue or pull 
   Aaron, I wrote these steps with the understanding that the learner has some experience with GitHub, so I did not describe the exact buttons or all of the steps involved with creating a PR. This also should help with constant edits for button label changes. Please let me know if you want me to go back and add detailed steps with the buttons, full steps, etc.
 -->  
 
-1. Navigate to the **Issue** tab of your repository 
-1. Create a new issue
-1. Create a second issue
-1. Link the second issue to the first
-   - _Tip: type `#1` within the comment to add a link to your first issue_
-1. Close issue #2, which is a duplicate of issue #1
+1. Navigate to the issue #1 (Welcome)
+2. Type "Duplicate of #2" as a comment and close issue #1
 
 </details>
 
