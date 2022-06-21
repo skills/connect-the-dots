@@ -66,11 +66,6 @@ When you want to create a crosslink, start typing the title of an issue or pull 
 
 ### :keyboard: Activity: Find and close the cross-linked issue
 
-<!--
-  <<< Author (Ross) notes: Activity 1 >>>
-  Aaron, I wrote these steps with the understanding that the learner has some experience with GitHub, so I did not describe the exact buttons or all of the steps involved with creating a PR. This also should help with constant edits for button label changes. Please let me know if you want me to go back and add detailed steps with the buttons, full steps, etc.
--->  
-
 1. Navigate to the issue #1 (Welcome)
 2. Type "Duplicate of #2" as a comment and close issue #1
 
@@ -139,7 +134,7 @@ When you're looking at a commit on GitHub, you can see a lot of information. Fro
 ![screenshot of a view of a commit on GitHub, highlighting the link to the pull request](https://user-images.githubusercontent.com/16547949/67341250-3edbb480-f4fd-11e9-805a-6bce5a8ba2d1.png)
 
 ### :keyboard: Activity: Fix a broken sidebar
-  
+
 1. In the main branch [Edit the `docs/_sidebar.md` file](/docs/_sidebar.md)
 2. Correct the spelling of the reference `(doc-references__.md)` on line 4 by changing it into `(doc-references.md)`
 3. Commit the changes on the `fix-sidebar` branch
