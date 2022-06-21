@@ -154,7 +154,7 @@ When you're looking at a commit on GitHub, you can see a lot of information. Fro
 <details id=4>
 <summary><h2>Finish</h2></summary>
 
-### Congratulations friend, you've completed this course! :tada:
+### Congratulations friend, you've completed this course!
 
 In this course, you've learned a lot about finding and sharing information. Within a GitHub repository, you can find history about what changes were made, and more importantly, _why_ changes were made.
 
