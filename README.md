@@ -106,8 +106,8 @@ A SHA is a reference to a specific object. In this case, it's a reference to a c
 3. Click `_sidebar.md` to view the file
 4. On the top right side of the file, click **Blame** to see the details of the most recent revision
 5. Click the commit message, `add sidebar to documentation` to see the commit details
-6. Copy some part of the SHA (at least the first 6 characters of the 40 character hexadecimal string listed after `commit`)
-7. Comment, to start the conversation, (at least the first 6 characters of) the SHA in **this issue**
+6. Copy the first seven characters of the SHA (the first 7 characters of the 40 character hexadecimal string listed after `commit`)
+7. Comment on issue #2 by adding the SHA from step 6 as a comment text and click on "Comment" button
 
 </details>
 
@@ -139,8 +139,8 @@ When you're looking at a commit on GitHub, you can see a lot of information. Fro
 ![screenshot of a view of a commit on GitHub, highlighting the link to the pull request](https://user-images.githubusercontent.com/16547949/67341250-3edbb480-f4fd-11e9-805a-6bce5a8ba2d1.png)
 
 ### :keyboard: Activity: Fix a broken sidebar
-
-1. In the main branch [Edit the `docs/_sidebar.md` file](/edit/docs/_sidebar.md)
+  
+1. In the main branch [Edit the `docs/_sidebar.md` file](/docs/_sidebar.md)
 2. Correct the spelling of the reference `(doc-references__.md)` on line 4 by changing it into `(doc-references.md)`
 3. Commit the changes on the `fix-sidebar` branch
 4. In the [Pull requests tab](/pulls), create a pull request by comparing 'main' branch to 'fix-sidebar' branch
