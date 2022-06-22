@@ -161,8 +161,7 @@ In this course, you've learned a lot about finding and sharing information. With
 ### What's next?
 
 - We'd love to hear what you thought of this course [in our community forum](https://github.community/c/education/github-learning-lab/34).
-- [Take another GitHub Learn course](https://github.com/githublearn).
-- [Read the GitHub Getting Started docs](https://docs.github.com/en/get-started).
+- [Take another GitHub Skills course](https://github.com/skills).
 - To find projects to contribute to, check out [GitHub Explore](https://github.com/explore).
 
 </details>
