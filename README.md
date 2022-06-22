@@ -120,10 +120,10 @@ Thanks for finding that commit! We now know that the sidebar was indeed added, a
 
 As we've already seen, conversations in issues and pull requests can reference other work, but the amount of context goes much further than crosslinks. Remember, Git is version control! For example, the commit that you found in the last step is connected with much more information such as: 
 
-- Who made the commit
-- What other changes were included
-- When the commit was made
-- Which pull request the commit was a part of
+- Who made the commit.
+- What other changes were included.
+- When the commit was made.
+- Which pull request the commit was a part of.
 
 The pull request is important because it goes beyond knowing when a commit happened. You can know _why_ a commit happened. Finding history is not about _blaming_ anyone, but about seeing the bigger picture. Why were decisions made? Who was involved? What were the build outputs and test results for each commit? Who requested changes, and who approved them?
 
