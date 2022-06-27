@@ -34,8 +34,8 @@ Have you ever worked in a repository with a lot of history? Perhaps you've had t
 1. Above these instructions, right-click **Use this template** and open the link in a new tab.
    ![Use this template](https://user-images.githubusercontent.com/1221423/169618716-fb17528d-f332-4fc5-a11a-eaa23562665e.png)
 2. In the new tab, follow the prompts to create a new repository.
-   - For owner, choose your personal account or an organization to host the repository.
-   - We recommend creating a public repository—private repositories will [use Actions minutes](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions).
+   - Choose your personal account or an organization to host the repository.
+   - We recommend creating a public repository. Private repositories will [use Actions minutes](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions).
    ![Create a new repository](https://user-images.githubusercontent.com/1221423/169618722-406dc508-add4-4074-83f0-c7a7ad87f6f3.png)
 3. After your new repository is created, wait about 20 seconds, then refresh the page. Follow the step-by-step instructions in the new repository's README.
 
@@ -120,10 +120,10 @@ Thanks for finding that commit! We now know that the sidebar was indeed added, a
 
 As we've already seen, conversations in issues and pull requests can reference other work, but the amount of context goes much further than crosslinks. Remember, Git is version control! For example, the commit that you found in the last step is connected with much more information such as: 
 
-- Who made the commit
-- What other changes were included
-- When the commit was made
-- Which pull request the commit was a part of
+- Who made the commit.
+- What other changes were included.
+- When the commit was made.
+- Which pull request the commit was a part of.
 
 The pull request is important because it goes beyond knowing when a commit happened. You can know _why_ a commit happened. Finding history is not about _blaming_ anyone, but about seeing the bigger picture. Why were decisions made? Who was involved? What were the build outputs and test results for each commit? Who requested changes, and who approved them?
 
@@ -135,14 +135,14 @@ When you're looking at a commit on GitHub, you can see a lot of information. Fro
 
 ### :keyboard: Activity: Fix a broken sidebar
 
-1. In the main branch [Edit the `docs/_sidebar.md` file](/docs/_sidebar.md)
-2. Correct the spelling of the reference `(doc-references__.md)` on line 4 by changing it into `(doc-references.md)`
+1. In the main branch [Edit the `docs/_sidebar.md` file](/docs/_sidebar.md).
+2. Correct the spelling of the reference `(doc-references__.md)` on line 4 by changing it into `(doc-references.md)`.
 3. Select or create a new branch `fix-sidebar` for this commit and start a pull request. 
-4. In the [Pull requests tab](/pulls), create a pull request by comparing 'main' branch to 'fix-sidebar' branch
-5. Using the **Assignees** section on the right side, assign yourself to the pull request
-6. In the PR comment add 'Closing #2' and autolink issue #2 
-6. Merge this pull request
-7. Delete the branch 'fix-sidebar'
+4. In the [Pull requests tab](/pulls), create a pull request by comparing 'main' branch to 'fix-sidebar' branch.
+5. Using the **Assignees** section on the right side, assign yourself to the pull request.
+6. In the PR comment add 'Closing #2' and autolink issue #2.
+6. Merge this pull request.
+7. Delete the branch 'fix-sidebar'.
 
 </details>
 
@@ -154,15 +154,14 @@ When you're looking at a commit on GitHub, you can see a lot of information. Fro
 <details id=4>
 <summary><h2>Finish</h2></summary>
 
-### Congratulations friend, you've completed this course! :tada:
+### Congratulations friend, you've completed this course!
 
 In this course, you've learned a lot about finding and sharing information. Within a GitHub repository, you can find history about what changes were made, and more importantly, _why_ changes were made.
 
 ### What's next?
 
 - We'd love to hear what you thought of this course [in our community forum](https://github.community/c/education/github-learning-lab/34).
-- [Take another GitHub Learn course](https://github.com/githublearn).
-- [Read the GitHub Getting Started docs](https://docs.github.com/en/get-started).
+- [Take another GitHub Skills course](https://github.com/skills).
 - To find projects to contribute to, check out [GitHub Explore](https://github.com/explore).
 
 </details>
