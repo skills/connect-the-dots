@@ -20,12 +20,12 @@
 
 Have you ever worked in a repository with a lot of history? Perhaps you've had to track down related issues and pull requests in the past, or you've had to find who committed a particular change. If you've ever found yourself in any of these situations, you'll know how important it is to navigate your workspace.
 
-- **Who is this for**: Developers, GitHub users, users new to Git, students, managers, teams.
+- **Who is this for**: Developers, GitHub users, users new to Git, students, managers, and teams.
 - **What you'll learn**: 
   - Find relevant issues and pull requests.
   - Search history to find context.
   - Make connections within GitHub to help others find things.
-- **What you'll build**: Reposity with existing commits, duplicated isssus, and content defect to be fixed.
+- **What you'll build**: Repository with existing commits, duplicated issus, and a content defect to be fixed.
 - **Prerequisites**: Before you take this course, you may want to go through the [GitHub Quickstart](https://docs.github.com/en/get-started/quickstart) introduction on GitHub Docs and [Introduction to GitHub](https://github.com/skills/introduction-to-github) course on GitHub Skills. 
 - **How long**: This course is three steps long and takes less than 15 min to complete.
 
