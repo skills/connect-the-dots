@@ -49,7 +49,7 @@ Have you ever worked in a repository with a lot of history? Perhaps you've had t
   Encourage users to open new tabs for steps!
 -->
 
-<details id=1>
+<details id=1 open>
 <summary><h2>Step 1: Resolve Duplicate Issues</h2></summary>
 
 GitHub has special capabilities to help reference other information on GitHub. For example, when you reference another issue or pull request by number, that number will be hyperlinked. At the same time, a cross-reference is created in the linked issue or pull request. This two-way reference helps people track the relationship of information across GitHub.
