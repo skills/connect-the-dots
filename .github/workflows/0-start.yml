@@ -100,7 +100,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
-      # Update README to close <details id=0>
+      # Update README to comment out step0
       # and open <details id=1>
       # and set STEP to '1'
       - name: Update to step 1
