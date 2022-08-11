@@ -104,9 +104,9 @@ jobs:
       # and open <details id=1>
       # and set STEP to '1'
       - name: Update to step 1
-        run: ./.github/script/update-step.sh
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          FROM_STEP: 0
-          TO_STEP: 1
+        uses: skills/action-update-step@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          from_step: 0
+          to_step: 1
 

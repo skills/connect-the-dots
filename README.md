@@ -140,7 +140,7 @@ When you're looking at a commit on GitHub, you can see a lot of information. Fro
 3. Select or create a new branch `fix-sidebar` for this commit and start a pull request. 
 4. In the [Pull requests tab](/pulls), create a pull request by comparing 'main' branch to 'fix-sidebar' branch.
 5. Using the **Assignees** section on the right side, assign yourself to the pull request.
-6. In the PR comment add 'Closing #2' and autolink issue #2.
+6. In the PR comment add 'Closes #2' and autolink issue #2.
 6. Merge this pull request.
 7. Delete the branch 'fix-sidebar'.
 
