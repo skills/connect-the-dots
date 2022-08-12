@@ -38,7 +38,7 @@ jobs:
     
     # We will only run this action when:
     # 1. This repository isn't the template repository
-    # 2. The STEP is currently 3 (see update-step.sh)
+    # 2. The STEP is currently 3
     # Reference https://docs.github.com/en/actions/learn-github-actions/contexts
     # Reference https://docs.github.com/en/actions/learn-github-actions/expressions
     if: ${{ !github.event.repository.is_template
@@ -70,9 +70,9 @@ jobs:
       # and open <details id=4>
       # and set STEP to '4'
       - name: Update to step 4
-        run: ./.github/script/update-step.sh
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          FROM_STEP: 3
-          TO_STEP: 4
-          BRANCH_NAME: main
+        uses: skills/action-update-step@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          from_step: 3
+          to_step: 4
+          branch_name: main
