@@ -138,7 +138,7 @@ When you're looking at a commit on GitHub, you can see a lot of information. Fro
 1. In the main branch [Edit the `docs/_sidebar.md` file](/docs/_sidebar.md).
 2. Correct the spelling of the reference `(doc-references__.md)` on line 4 by changing it into `(doc-references.md)`.
 3. Select or create a new branch `fix-sidebar` for this commit and start a pull request. 
-4. In the Pull requests tab, create a pull request by comparing 'main' branch to 'fix-sidebar' branch.
+4. Make sure that **main** is selected for **base:** and **fix-sidebar** for **compare:**.
 5. Using the **Assignees** section on the right side, assign yourself to the pull request.
 6. In the PR comment add 'Closes #2' and autolink issue #2.
 7. Click **Create pull request**.

@@ -63,8 +63,8 @@ jobs:
         run: echo '${{ toJSON(github.event) }}'
         
       - name: Check if the isuees comments is referencing the required commit ID
-        if: contains(github.event.head_commit.message, env.FIND_FIXING_MESSAGE)
-        run: echo 'Found _Closing_ message with autolinked issue in the push'
+        if: contains(github.event.pull_request.body, env.FIND_FIXING_MESSAGE)
+        run: echo 'Found _Closes_ message with autolinked issue in the push'
 
       # Update README to close <details id=3>
       # and open <details id=4>
