@@ -15,9 +15,6 @@ permissions:
   # Need `contents: read` to checkout the repository
   # Need `contents: write` to update the step metadata
   contents: write
-  
-env:
-  FIND_COMMIT_ID: f3dcc803ace969b145b318bfbf6a9f3071b322f7
 
 jobs:
 
@@ -65,7 +62,7 @@ jobs:
         id: github_issue_step
         run: echo '${{ toJSON(github.event.issue) }}'
         
-      - name: Check if the isuees comments is referencing the required commit ID
+      - name: Check if the issue comment is referencing the required commit ID
         if: contains(github.event.comment.body, needs.find_commit_id.outputs.find_commit_id)
         run: echo 'Found the reference to required commit in the comment'
 
