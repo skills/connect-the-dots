@@ -17,7 +17,7 @@ permissions:
   contents: write
 
 env:
-  FIND_FIXING_MESSAGE: Closing
+  FIND_FIXING_MESSAGE: Closes
   
 jobs:
 
