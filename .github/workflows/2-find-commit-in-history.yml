@@ -25,9 +25,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - id: get_step
-        run: echo "::set-output name=current_step::$(cat ./.github/script/STEP)"
+        run: |
+          echo "::echo::on"
+          echo "::set-output name=current_step::$(cat ./.github/script/STEP)"
       - id: get_find_commit_id
-        run: echo "::set-output name=find_commit_id::$(cat ./.github/files/SIDEBARCOMMIT)"
+        run: |
+          echo "::echo::on"
+          echo "::set-output name=find_commit_id::$(cat ./.github/files/SIDEBARCOMMIT)"
     outputs:
       current_step: ${{ steps.get_step.outputs.current_step }}
       find_commit_id: ${{ steps.get_find_commit_id.outputs.find_commit_id }}
