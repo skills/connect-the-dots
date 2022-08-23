@@ -56,17 +56,17 @@ jobs:
         
       - name: Check if the PR comment is containing the required closing message
         if: contains(github.event.pull_request.body, 'Closes')
-        run: echo 'Found _Closes_ message with autolinked issue in a comment on PR $NUMBER'
+        run: echo "Found _Closes_ message with autolinked issue in the body of PR $NUMBER"
         env:
           NUMBER: ${{ github.event.pull_request.number }}
 
       # Update README to close <details id=3>
-      # and open <details id=4>
-      # and set STEP to '4'
-      - name: Update to step 4
+      # and open <details id=X>
+      # and set STEP to 'X'
+      - name: Update to step X
         uses: skills/action-update-step@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           from_step: 3
-          to_step: 4
+          to_step: X
 
