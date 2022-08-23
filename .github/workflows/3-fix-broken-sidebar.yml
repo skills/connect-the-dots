@@ -1,15 +1,15 @@
 name: Step 3, Fix a broken sidebar
 
-# This step triggers after TBD-step-3-event-desc
+# This step listens for the learner to create or edit a pull request comment
 # This step sets STEP to 4
 # This step closes <details id=3> and opens <details id=4>
 
-# This will run every time we TBD-step-3-event-desc
+# This will run every time we update or close the pull request
 # Reference https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
+  issue_comment:
+    types: [created, edited]
 
 permissions:
   # Need `contents: read` to checkout the repository
@@ -30,16 +30,19 @@ jobs:
       current_step: ${{ steps.get_step.outputs.current_step }}
       
   on_fix_the_sidebar_issue_comment:
-    name: Check if the PR body is containing the correct closing message
+    name: Check if the PR comment is containing the correct closing message
     needs: get_current_step
     
     # We will only run this action when:
     # 1. This repository isn't the template repository
     # 2. The STEP is currently 3
+    # 3. The event is a PR comment
     # Reference https://docs.github.com/en/actions/learn-github-actions/contexts
     # Reference https://docs.github.com/en/actions/learn-github-actions/expressions
-    if: ${{ !github.event.repository.is_template
-        && needs.get_current_step.outputs.current_step == 3 }}
+    if: |
+      ${{ !github.event.repository.is_template
+          && needs.get_current_step.outputs.current_step == 3
+          && github.event.issue.pull_request }}
 
     # We'll run Ubuntu for performance instead of Mac or Windows
     runs-on: ubuntu-latest
@@ -53,15 +56,17 @@ jobs:
 
       - name: Dump GitHub comment context
         id: github_comment_step
-        run: echo '${{ toJSON(github.event) }}'
+        run: echo '${{ toJSON(github.event.comment) }}'
         
       - name: Dump GitHub issue context
-        id: github_issue_step
-        run: echo '${{ toJSON(github.event) }}'
+        id: github_pull_request_step
+        run: echo '${{ toJSON(github.event.pull_request) }}'
         
-      - name: Check if the PR body is containing the required closing message
-        if: contains(github.event.pull_request.body, 'Closes')
-        run: echo 'Found _Closes_ message with autolinked issue in the push'
+      - name: Check if the PR comment is containing the required closing message
+        if: contains(github.event.comment.body, 'Closes')
+        run: echo 'Found _Closes_ message with autolinked issue in a comment on PR $NUMBER'
+        env:
+          NUMBER: ${{ github.event.issue.number }}
 
       # Update README to close <details id=3>
       # and open <details id=4>
