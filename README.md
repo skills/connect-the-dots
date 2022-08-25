@@ -68,6 +68,7 @@ When you want to create a crosslink, start typing the title of an issue or pull 
 
 1. Navigate to the issue #1 (Welcome)
 2. Type "Duplicate of #2" as a comment and close issue #1
+3. Wait about 20 seconds then refresh this page for the next step.
 
 </details>
 
@@ -103,6 +104,7 @@ A SHA is a reference to a specific object. In this case, it's a reference to a c
 5. Click the commit message, `add sidebar to documentation` to see the commit details
 6. Copy the first seven characters of the SHA (the first 7 characters of the 40 character hexadecimal string listed after `commit`)
 7. Comment on issue #2 by adding the SHA from step 6 as a comment text and click on "Comment" button
+8. Wait about 20 seconds then refresh this page for the next step.
 
 </details>
 
@@ -113,7 +115,7 @@ A SHA is a reference to a specific object. In this case, it's a reference to a c
   TBD-step-3-notes.
 -->
 
-<details id=3 open>
+<details id=3>
 <summary><h2>Step 3: Fix a broken sidebar</h2></summary>
 
 Thanks for finding that commit! We now know that the sidebar was indeed added, and it was done in that commit. Let's see if we can dig a little deeper to find out if any planning or conversation, using comments, occurred around this change. 
@@ -138,11 +140,13 @@ When you're looking at a commit on GitHub, you can see a lot of information. Fro
 1. In the main branch [Edit the `docs/_sidebar.md` file](/docs/_sidebar.md).
 2. Correct the spelling of the reference `(doc-references__.md)` on line 4 by changing it into `(doc-references.md)`.
 3. Select or create a new branch `fix-sidebar` for this commit and start a pull request. 
-4. In the [Pull requests tab](/pulls), create a pull request by comparing 'main' branch to 'fix-sidebar' branch.
+4. Make sure that **main** is selected for **base:** and **fix-sidebar** for **compare:**.
 5. Using the **Assignees** section on the right side, assign yourself to the pull request.
 6. In the PR comment add 'Closes #2' and autolink issue #2.
-6. Merge this pull request.
-7. Delete the branch 'fix-sidebar'.
+7. Click **Create pull request** and wait about 20 seconds.
+8. Merge this pull request.
+9. Delete the branch 'fix-sidebar'.
+10. Refresh this page for the next step.
 
 </details>
 
@@ -151,7 +155,7 @@ When you're looking at a commit on GitHub, you can see a lot of information. Fro
   Review what we learned, ask for feedback, provide next steps.
 -->
 
-<details id=4>
+<details id=X>
 <summary><h2>Finish</h2></summary>
 
 ### Congratulations friend, you've completed this course!
