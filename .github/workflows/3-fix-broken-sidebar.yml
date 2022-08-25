@@ -31,8 +31,8 @@ jobs:
     outputs:
       current_step: ${{ steps.get_step.outputs.current_step }}
       
-  on_fix_the_sidebar_issue_comment:
-    name: Check if the PR comment is containing the correct closing message
+  on_fix_the_sidebar_pr_body:
+    name: Check if the PR body is containing the correct closing message
     needs: get_current_step
     
     # We will only run this action when:
@@ -56,7 +56,7 @@ jobs:
         id: github_pull_request_step
         run: echo '${{ toJSON(github.event.pull_request) }}'
         
-      - name: Check if the PR comment is containing the required closing message
+      - name: Check if the PR body is containing the required closing message
         if: contains(github.event.pull_request.body, 'Closes')
         run: echo "Found _Closes_ message with autolinked issue in the body of PR $NUMBER"
         env:
