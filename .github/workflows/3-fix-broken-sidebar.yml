@@ -1,24 +1,21 @@
 name: Step 3, Fix a broken sidebar
 
-# This step triggers after TBD-step-3-event-desc
+# This step listens for the learner to open, edit, or reopen a pull request
 # This step sets STEP to 4
 # This step closes <details id=3> and opens <details id=4>
 
-# This will run every time we TBD-step-3-event-desc
+# This will run every time we edit or reopen the pull request
 # Reference https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
+  pull_request:
+    types: [opened, edited, reopened]
 
 permissions:
   # Need `contents: read` to checkout the repository
   # Need `contents: write` to update the step metadata
   contents: write
 
-env:
-  FIND_FIXING_MESSAGE: Closing
-  
 jobs:
 
   get_current_step:
@@ -28,21 +25,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - id: get_step
-        run: echo "::set-output name=current_step::$(cat ./.github/script/STEP)"
+        run: |
+          echo "::echo::on"
+          echo "::set-output name=current_step::$(cat ./.github/script/STEP)"
     outputs:
       current_step: ${{ steps.get_step.outputs.current_step }}
       
-  on_fix_the_sidebar_issue_comment:
-    name: Check if the issue comment is referencing the correct commit ID
+  on_fix_the_sidebar_pr_body:
+    name: Check if the PR body is containing the correct closing message
     needs: get_current_step
     
     # We will only run this action when:
     # 1. This repository isn't the template repository
-    # 2. The STEP is currently 2 (see update-step.sh)
+    # 2. The STEP is currently 3
     # Reference https://docs.github.com/en/actions/learn-github-actions/contexts
     # Reference https://docs.github.com/en/actions/learn-github-actions/expressions
-    if: ${{ github.repository_owner != 'TBD-organization' }} 
-      && needs.get_current_step.outputs.current_step == 3 }}
+    if: ${{ !github.event.repository.is_template && needs.get_current_step.outputs.current_step == 3 }}
 
     # We'll run Ubuntu for performance instead of Mac or Windows
     runs-on: ubuntu-latest
@@ -53,26 +51,24 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0 # Let's get all the branches
-
-      - name: Dump GitHub comment context
-        id: github_comment_step
-        run: echo '${{ toJSON(github.event) }}'
         
-      - name: Dump GitHub issue context
-        id: github_issue_step
-        run: echo '${{ toJSON(github.event) }}'
+      - name: Dump GitHub pull request context
+        id: github_pull_request_step
+        run: echo '${{ toJSON(github.event.pull_request) }}'
         
-      - name: Check if the isuees comments is referencing the required commit ID
-        if: contains(github.event.head_commit.message, env.FIND_FIXING_MESSAGE)
-        run: echo 'Found _Closing_ message with autolinked issue in the push'
+      - name: Check if the PR body is containing the required closing message
+        if: contains(github.event.pull_request.body, 'Closes')
+        run: echo "Found _Closes_ message with autolinked issue in the body of PR $NUMBER"
+        env:
+          NUMBER: ${{ github.event.pull_request.number }}
 
       # Update README to close <details id=3>
-      # and open <details id=4>
-      # and set STEP to '4'
-      - name: Update to step 4
-        run: ./.github/script/update-step.sh
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          FROM_STEP: 3
-          TO_STEP: 4
-          BRANCH_NAME: main
+      # and open <details id=X>
+      # and set STEP to 'X'
+      - name: Update to step X
+        uses: skills/action-update-step@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          from_step: 3
+          to_step: X
+
