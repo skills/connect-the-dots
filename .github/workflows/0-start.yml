@@ -1,10 +1,10 @@
 name: Step 0, Start
 
-# This step triggers after the learner creates a new repository from the template
+# This step listens for the learner pushing a commit to `main`
 # This step sets STEP to 1
 # This step closes <details id=0> and opens <details id=1>
 
-# This will run every time we create push a commit to `main`
+# This will run every time we push a commit to `main`
 # Reference https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
 on:
   workflow_dispatch:
