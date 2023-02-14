@@ -19,18 +19,21 @@
 <details id=0 open>
 <summary><h2>Welcome</h2></summary>
 
-TBD-welcome-paragraph
+ve you ever worked in a repository with a lot of history? Perhaps you've had to track down related issues and pull requests in the past, or you've had to find who committed a particular change. If you've ever found yourself in any of these situations, you'll know how important it is to navigate your workspace.
 
-- **Who is this for**: TBD-audience.
-- **What you'll learn**: TBD-objective.
-- **What you'll build**: TBD-result.
-- **Prerequisites**: TBD-prerequisites.
-- **How long**: This course is TBD-step-count steps long and takes less than TBD-duration to complete.
+- **Who is this for**: Developers, GitHub users, users new to Git, students, managers, and teams.
+- **What you'll learn**:
+  - Find relevant issues and pull requests.
+  - Search history to find context.
+  - Make connections within GitHub to help others find things.
+- **What you'll build**: Repository with existing commits, duplicated issues, and a content defect to be fixed.
+- **Prerequisites**: Before you take this course, you may want to go through the [GitHub Quickstart](https://docs.github.com/en/get-started/quickstart) introduction on GitHub Docs and [Introduction to GitHub](https://github.com/skills/introduction-to-github) course on GitHub Skills.
+- **How long**: This course is three steps long and takes less than 15 min to complete.
 
 ## How to start this course
 
 1. Right-click **Start course** and open the link in a new tab.
-   <br />[![start-course](https://user-images.githubusercontent.com/1221423/218596841-0645fe1a-4aaf-4f51-9ab3-8aa2d3fdd487.svg)](/TBD-generate)
+   <br />[![start-course](https://user-images.githubusercontent.com/1221423/218596841-0645fe1a-4aaf-4f51-9ab3-8aa2d3fdd487.svg)](/skills/connect-the-dots/generate)
 2. In the new tab, follow the prompts to create a new repository.
    - For owner, choose your personal account or an organization to host the repository.
    - We recommend creating a public repository—private repositories will [use Actions minutes](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions).
