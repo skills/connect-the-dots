@@ -17,7 +17,6 @@ permissions:
   contents: write
 
 jobs:
-
   get_current_step:
     name: Check current step number
     runs-on: ubuntu-latest
@@ -26,8 +25,7 @@ jobs:
         uses: actions/checkout@v3
       - id: get_step
         run: |
-          echo "::echo::on"
-          echo "::set-output name=current_step::$(cat ./.github/script/STEP)"
+          echo "current_step=$(cat ./.github/script/STEP)" >> $GITHUB_OUTPUT
     outputs:
       current_step: ${{ steps.get_step.outputs.current_step }}
       
@@ -40,7 +38,9 @@ jobs:
     # 2. The STEP is currently 3
     # Reference https://docs.github.com/en/actions/learn-github-actions/contexts
     # Reference https://docs.github.com/en/actions/learn-github-actions/expressions
-    if: ${{ !github.event.repository.is_template && needs.get_current_step.outputs.current_step == 3 }}
+    if: >-
+      ${{ !github.event.repository.is_template
+          && needs.get_current_step.outputs.current_step == 3 }}
 
     # We'll run Ubuntu for performance instead of Mac or Windows
     runs-on: ubuntu-latest
