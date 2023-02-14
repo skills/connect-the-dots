@@ -19,7 +19,7 @@
 <details id=0 open>
 <summary><h2>Welcome</h2></summary>
 
-ve you ever worked in a repository with a lot of history? Perhaps you've had to track down related issues and pull requests in the past, or you've had to find who committed a particular change. If you've ever found yourself in any of these situations, you'll know how important it is to navigate your workspace.
+Have you ever worked in a repository with a lot of history? Perhaps you've had to track down related issues and pull requests in the past, or you've had to find who committed a particular change. If you've ever found yourself in any of these situations, you'll know how important it is to navigate your workspace.
 
 - **Who is this for**: Developers, GitHub users, users new to Git, students, managers, and teams.
 - **What you'll learn**:
