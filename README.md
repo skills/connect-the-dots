@@ -79,7 +79,6 @@ When you want to create a crosslink, start typing the title of an issue or pull 
   <<< Author notes: Step 2 >>>
   Start this step by acknowledging the previous step.
   Define terms and link to docs.github.com.
-  TBD-step-2-notes.
 -->
 
 <details id=2>
@@ -117,7 +116,6 @@ A SHA is a reference to a specific object. In this case, it's a reference to a c
   <<< Author notes: Step 3 >>>
   Start this step by acknowledging the previous step.
   Define terms and link to docs.github.com.
-  TBD-step-3-notes.
 -->
 
 <details id=3>
