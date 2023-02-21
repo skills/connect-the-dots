@@ -84,7 +84,7 @@ When you want to create a crosslink, start typing the title of an issue or pull 
 
 An important part of version control is the ability to look into the past. By using `git blame`, and finding the story behind a commit, we're able to do more than _blame_ people for code. We're able to see the story around why a commit was made. What is the associated pull request? Who approved the pull request? What tests were run on that commit before it was merged?
 
-The obvious reason to find things in history is to know about the history. With issues and pull requests, we see a more complete story about about the history, not just just the bare minimum.
+The obvious reason to find things in history is to know about the history. With issues and pull requests, we see a more complete story about the history, not just the bare minimum.
 
 ### What's `git blame`?
 
