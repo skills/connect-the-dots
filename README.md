@@ -85,7 +85,7 @@ When you want to create a crosslink, start typing the title of an issue or pull 
 
 An important part of version control is the ability to look into the past. By using `git blame`, and finding the story behind a commit, we're able to do more than _blame_ people for code. We're able to see the story around why a commit was made. What is the associated pull request? Who approved the pull request? What tests were run on that commit before it was merged?
 
-The obvious reason to find things in history is to know about the history. With issues and pull requests, we see a more complete story about the history, not just just the bare minimum.
+The obvious reason to find things in history is to know about the history. With issues and pull requests, we see a more complete story about the history, not just the bare minimum.
 
 ### What's `git blame`?
 
@@ -166,6 +166,14 @@ When you're looking at a commit on GitHub, you can see a lot of information. Fro
 In this course, you've learned a lot about finding and sharing information. Within a GitHub repository, you can find history about what changes were made, and more importantly, _why_ changes were made.
 
 ### What's next?
+
+You can enable GitHub Pages and see `docs/index.html` as a website!
+1. Replace `USERNAME` with your GitHub username and `REPONAME` with your GitHub repository name in `docs/index.html`.
+1. Under your repository name at the upper right, click :gear: **Settings**.
+1. Then on the lower left, click **Pages**.
+1. In the **GitHub Pages** section, select `main` in the **Select branch** drop-down menu and `/docs` in the **Select folder** drop-down menu.
+1. Click the **Save** button.
+1. Wait about 30 seconds then refresh the page. When you see "Your site is published at ...," you can click on the link to see your published site.
 
 Check out these resources to learn more or get involved:
 - Are you a student? Check out the [Student Developer Pack](https://education.github.com/pack).
