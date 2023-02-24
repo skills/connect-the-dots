@@ -101,7 +101,7 @@ A SHA is a reference to a specific object. In this case, it's a reference to a c
    - _Tip: you may have previously created your repository in a new tab_
 2. Click `docs` to navigate into the `/docs` directory
 3. Click `_sidebar.md` to view the file
-4. On the top right side of the file, click **Blame** to see the details of the most recent revision
+4. On the top left side of the file, click **Blame** to see the details of the most recent revision
 5. Click the commit message, `add sidebar to documentation` to see the commit details
 6. Copy the first seven characters of the SHA (the first 7 characters of the 40 character hexadecimal string listed after `commit`)
 7. Comment on issue #2 by adding the SHA from step 6 as a comment text and click on "Comment" button
