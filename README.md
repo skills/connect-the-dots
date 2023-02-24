@@ -51,7 +51,9 @@ Have you ever worked in a repository with a lot of history? Perhaps you've had t
 -->
 
 <details id=1>
-<summary><h2>Step 1: Resolve Duplicate Issues</h2></summary>
+<summary><h2>Step 1: Resolve duplicate issues</h2></summary>
+
+_Welcome to the course :tada:_
 
 GitHub has special capabilities to help reference other information on GitHub. For example, when you reference another issue or pull request by number, that number will be hyperlinked. At the same time, a cross-reference is created in the linked issue or pull request. This two-way reference helps people track the relationship of information across GitHub.
 
@@ -77,11 +79,12 @@ When you want to create a crosslink, start typing the title of an issue or pull 
   <<< Author notes: Step 2 >>>
   Start this step by acknowledging the previous step.
   Define terms and link to docs.github.com.
-  TBD-step-2-notes.
 -->
 
 <details id=2>
 <summary><h2>Step 2: Find a commit in history</h2></summary>
+
+_Thanks for the duplicate note :wave:_
 
 An important part of version control is the ability to look into the past. By using `git blame`, and finding the story behind a commit, we're able to do more than _blame_ people for code. We're able to see the story around why a commit was made. What is the associated pull request? Who approved the pull request? What tests were run on that commit before it was merged?
 
@@ -113,11 +116,12 @@ A SHA is a reference to a specific object. In this case, it's a reference to a c
   <<< Author notes: Step 3 >>>
   Start this step by acknowledging the previous step.
   Define terms and link to docs.github.com.
-  TBD-step-3-notes.
 -->
 
 <details id=3>
 <summary><h2>Step 3: Fix a broken sidebar</h2></summary>
+
+_Great job finding that commit :heart:_
 
 Thanks for finding that commit! We now know that the sidebar was indeed added, and it was done in that commit. Let's see if we can dig a little deeper to find out if any planning or conversation, using comments, occurred around this change. 
 
