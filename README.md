@@ -84,7 +84,7 @@ When you want to create a crosslink, start typing the title of an issue or pull 
 <details id=2>
 <summary><h2>Step 2: Find a commit in history</h2></summary>
 
-_Thanks for the duplicate note :note:_
+_Thanks for the duplicate note :wave:_
 
 An important part of version control is the ability to look into the past. By using `git blame`, and finding the story behind a commit, we're able to do more than _blame_ people for code. We're able to see the story around why a commit was made. What is the associated pull request? Who approved the pull request? What tests were run on that commit before it was merged?
 
@@ -121,7 +121,7 @@ A SHA is a reference to a specific object. In this case, it's a reference to a c
 <details id=3>
 <summary><h2>Step 3: Fix a broken sidebar</h2></summary>
 
-_Great job finding that commit :heart_
+_Great job finding that commit :heart:_
 
 Thanks for finding that commit! We now know that the sidebar was indeed added, and it was done in that commit. Let's see if we can dig a little deeper to find out if any planning or conversation, using comments, occurred around this change. 
 
