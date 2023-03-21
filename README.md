@@ -5,7 +5,9 @@
   Add your open source license, GitHub uses Creative Commons Attribution 4.0 International.
 -->
 
-# Connect the Dots in a GitHub repository
+# Connect the dots in a GitHub repository
+
+_Useful tips when navigating through your repository._
 
 <!--
   <<< Author notes: Start of the course >>>
