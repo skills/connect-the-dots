@@ -48,7 +48,10 @@ Have you ever worked in a repository with a lot of history? Perhaps you've had t
 [![start-course](https://user-images.githubusercontent.com/1221423/235727646-4a590299-ffe5-480d-8cd5-8194ea184546.svg)](https://github.com/new?template_owner=skills&template_name=connect-the-dots&owner=%40me&name=skills-connect-the-dots&description=My+clone+repository&visibility=public)
 
 1. Right-click **Start course** and open the link in a new tab.
-2. In the new tab, follow the prompts to create a new repository. For owner, we recommend your personal account.
+2. In the new tab, most of the prompts will automatically fill in for you.
+   - For owner, choose your personal account or an organization to host the repository.
+   - We recommend creating a public repository, as private repositories will [use Actions minutes](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions).
+   - Scroll down and click the **Create repository** button at the bottom of the form.
 3. After your new repository is created, wait about 20 seconds, then refresh the page. Follow the step-by-step instructions in the new repository's README.
 
 </details>
@@ -71,7 +74,7 @@ GitHub has special capabilities to help reference other information on GitHub. F
 ![a screenshot of an issue linking to a PR, and a PR with a cross-reference to the issue](https://user-images.githubusercontent.com/6351798/172456846-2daec570-08b0-4ffa-a7cb-41acc50b836e.png)
 
 With collaboraration from multiple team members, sometimes issues can be duplicated. In the above example, the new issue `#8346` is a duplicate of a previous issue `#8249`. The cross-reference ability allows you to track these duplications and close issues when appropriate.
-  
+
 ### Creating references
 
 When you link to another issue, a reference within GitHub is automatically created. In fact, you don't even need to include the full link. If you were to type `#5` within a comment, that would turn into a link to issue or pull request number 5.
@@ -134,9 +137,9 @@ A SHA is a reference to a specific object. In this case, it's a reference to a c
 
 _Great job finding that commit :heart:_
 
-Thanks for finding that commit! We now know that the sidebar was indeed added, and it was done in that commit. Let's see if we can dig a little deeper to find out if any planning or conversation, using comments, occurred around this change. 
+Thanks for finding that commit! We now know that the sidebar was indeed added, and it was done in that commit. Let's see if we can dig a little deeper to find out if any planning or conversation, using comments, occurred around this change.
 
-As we've already seen, conversations in issues and pull requests can reference other work, but the amount of context goes much further than crosslinks. Remember, Git is version control! For example, the commit that you found in the last step is connected with much more information such as: 
+As we've already seen, conversations in issues and pull requests can reference other work, but the amount of context goes much further than crosslinks. Remember, Git is version control! For example, the commit that you found in the last step is connected with much more information such as:
 
 - Who made the commit.
 - What other changes were included.
@@ -155,7 +158,7 @@ When you're looking at a commit on GitHub, you can see a lot of information. Fro
 
 1. In the main branch [Edit the `docs/_sidebar.md` file](/docs/_sidebar.md).
 2. Correct the spelling of the reference `(doc-references__.md)` on line 4 by changing it into `(doc-references.md)`.
-3. Select or create a new branch `fix-sidebar` for this commit and start a pull request. 
+3. Select or create a new branch `fix-sidebar` for this commit and start a pull request.
 4. Make sure that **main** is selected for **base:** and **fix-sidebar** for **compare:**.
 5. Using the **Assignees** section on the right side, assign yourself to the pull request.
 6. In the PR comment add 'Closes #2' and autolink issue #2.
