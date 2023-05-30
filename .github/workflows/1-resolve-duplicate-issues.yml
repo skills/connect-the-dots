@@ -29,11 +29,11 @@ jobs:
           echo "current_step=$(cat ./.github/steps/-step.txt)" >> $GITHUB_OUTPUT
     outputs:
       current_step: ${{ steps.get_step.outputs.current_step }}
-  
+
   on_duplicate_issue_closed:
     name: Check if duplicate issue is marked as duplicate
     needs: get_current_step
-    
+
     # We will only run this action when:
     # 1. This repository isn't the template repository.
     # 2. The step is currently 1.
@@ -56,11 +56,11 @@ jobs:
       - name: Dump GitHub comment context
         id: github_comment_step
         run: echo '${{ toJSON(github.event.comment) }}'
-        
+
       - name: Dump GitHub issue context
         id: github_issue_step
         run: echo '${{ toJSON(github.event.issue) }}'
-        
+
       - name: Check if commented issue is closed and marked as duplicate
         if: ${{ contains(github.event.comment.body, 'Duplicate of') && (github.event.issue.state == 'closed')}}
         run: echo 'Duplicate issue closed'
@@ -72,4 +72,3 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           from_step: 1
           to_step: 2
-

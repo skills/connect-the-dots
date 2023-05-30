@@ -14,6 +14,7 @@ In this course, you've learned a lot about finding and sharing information. With
 ### What's next?
 
 You can enable GitHub Pages and see `docs/index.html` as a website!
+
 1. Replace `USERNAME` with your GitHub username and `REPONAME` with your GitHub repository name in `docs/index.html`.
 1. Under your repository name at the upper right, click :gear: **Settings**.
 1. Then on the lower left, click **Pages**.
@@ -22,6 +23,7 @@ You can enable GitHub Pages and see `docs/index.html` as a website!
 1. Wait about 30 seconds then refresh the page. When you see "Your site is published at ...," you can click on the link to see your published site.
 
 Check out these resources to learn more or get involved:
+
 - Are you a student? Check out the [Student Developer Pack](https://education.github.com/pack).
 - [Take another GitHub Skills course](https://github.com/skills).
 - [Read the GitHub Getting Started docs](https://docs.github.com/en/get-started).

@@ -10,10 +10,10 @@ on:
   push:
     branches:
       - main
-  
+
 permissions:
   contents: write
-  pull-requests: write 
+  pull-requests: write
   issues: write
 
 jobs:
@@ -70,7 +70,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # This is required to create a relevant history for docs/_sidebar.md 
+      # This is required to create a relevant history for docs/_sidebar.md
       # after being created from the template repository.
       - name: Prepare files history
         run: |
@@ -100,7 +100,7 @@ jobs:
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
+
       # Update README from step 0 to step 1.
       - name: Update to step 1
         uses: skills/action-update-step@v2
@@ -108,4 +108,3 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           from_step: 0
           to_step: 1
-
