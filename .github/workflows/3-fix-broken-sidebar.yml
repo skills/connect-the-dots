@@ -1,7 +1,7 @@
 name: Step 3, Fix a broken sidebar
 
 # This step listens for the learner opening, editing, or reopening a pull request.
-# This workflow updates from step  to step X.
+# This workflow updates from step 3 to step X.
 
 # This will run every time we open, edit, or reopen the pull request.
 # Reference: https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
