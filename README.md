@@ -15,8 +15,7 @@ _Useful tips when navigating through your repository._
   and tell the learner why they should take the course.
 -->
 
-<details id=0 open>
-<summary><h2>Welcome</h2></summary>
+## Welcome
 
 Have you ever worked in a repository with a lot of history? Perhaps you've had to track down related issues and pull requests in the past, or you've had to find who committed a particular change. If you've ever found yourself in any of these situations, you'll know how important it is to navigate your workspace.
 
@@ -27,7 +26,7 @@ Have you ever worked in a repository with a lot of history? Perhaps you've had t
   - Make connections within GitHub to help others find things.
 - **What you'll build**: Repository with existing commits, duplicated issues, and a content defect to be fixed.
 - **Prerequisites**: Before you take this course, you may want to go through the [GitHub Quickstart](https://docs.github.com/en/get-started/quickstart) introduction on GitHub Docs and [Introduction to GitHub](https://github.com/skills/introduction-to-github) course on GitHub Skills.
-- **How long**: This course  takes less than 15 min to complete.
+- **How long**: This course takes less than 15 min to complete.
 
 In this course, you will:
 
@@ -57,7 +56,7 @@ In this course, you will:
    - Scroll down and click the **Create repository** button at the bottom of the form.
 3. After your new repository is created, wait about 20 seconds, then refresh the page. Follow the step-by-step instructions in the new repository's README.
 
-</details>
+
 
 <!--
   <<< Author notes: Step 1 >>>
@@ -67,8 +66,7 @@ In this course, you will:
   Encourage users to open new tabs for steps!
 -->
 
-<details id=1>
-<summary><h2>Step 1: Resolve duplicate issues</h2></summary>
+## Step 1: Resolve duplicate issues
 
 _Welcome to the course :tada:_
 
@@ -90,7 +88,7 @@ When you want to create a crosslink, start typing the title of an issue or pull 
 2. Type "Duplicate of #2" as a comment and close issue #1
 3. Wait about 20 seconds then refresh this page for the next step.
 
-</details>
+
 
 <!--
   <<< Author notes: Step 2 >>>
@@ -98,8 +96,7 @@ When you want to create a crosslink, start typing the title of an issue or pull 
   Define terms and link to docs.github.com.
 -->
 
-<details id=2>
-<summary><h2>Step 2: Find a commit in history</h2></summary>
+## Step 2: Find a commit in history
 
 _Thanks for the duplicate note :wave:_
 
@@ -127,7 +124,7 @@ A SHA is a reference to a specific object. In this case, it's a reference to a c
 7. Comment on issue #2 by adding the SHA from step 6 as a comment text and click on "Comment" button
 8. Wait about 20 seconds then refresh this page for the next step.
 
-</details>
+
 
 <!--
   <<< Author notes: Step 3 >>>
@@ -135,8 +132,7 @@ A SHA is a reference to a specific object. In this case, it's a reference to a c
   Define terms and link to docs.github.com.
 -->
 
-<details id=3>
-<summary><h2>Step 3: Fix a broken sidebar</h2></summary>
+## Step 3: Fix a broken sidebar
 
 _Great job finding that commit :heart:_
 
@@ -170,15 +166,14 @@ When you're looking at a commit on GitHub, you can see a lot of information. Fro
 9. Delete the branch 'fix-sidebar'.
 10. Refresh this page for the next step.
 
-</details>
+
 
 <!--
   <<< Author notes: Finish >>>
   Review what we learned, ask for feedback, provide next steps.
 -->
 
-<details id=X>
-<summary><h2>Finish</h2></summary>
+## Finish
 
 ### Congratulations friend, you've completed this course!
 
@@ -202,7 +197,7 @@ Check out these resources to learn more or get involved:
 - [Read the GitHub Getting Started docs](https://docs.github.com/en/get-started).
 - To find projects to contribute to, check out [GitHub Explore](https://github.com/explore).
 
-</details>
+
 
 <!--
   <<< Author notes: Footer >>>
