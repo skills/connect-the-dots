@@ -5,7 +5,7 @@
 
 ## Finish
 
-### Congratulations friend, you've completed this course!
+_Congratulations friend, you've completed this course! :tada:_
 
 <img src=https://octodex.github.com/images/collabocats.jpg alt=celebrate width=300 align=right>
 
