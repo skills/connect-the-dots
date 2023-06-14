@@ -1,4 +1,4 @@
-# GIT tics
+# GIT tips
 
 # Fetch a file from another branch to the current one
 
