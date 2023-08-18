@@ -25,6 +25,7 @@ You can enable GitHub Pages and see `docs/index.html` as a website!
 Check out these resources to learn more or get involved:
 
 - Are you a student? Check out the [Student Developer Pack](https://education.github.com/pack).
+- We'd love to hear what you thought of this course in our [discussion board](https://github.com/orgs/skills/discussions/categories/connect-the-dots).
 - [Take another GitHub Skills course](https://github.com/skills).
 - [Read the GitHub Getting Started docs](https://docs.github.com/en/get-started).
 - To find projects to contribute to, check out [GitHub Explore](https://github.com/explore).
