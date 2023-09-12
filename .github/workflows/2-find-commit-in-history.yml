@@ -26,8 +26,12 @@ jobs:
       - id: get_step
         run: |
           echo "current_step=$(cat ./.github/steps/-step.txt)" >> $GITHUB_OUTPUT
+      - id: get_commit_id
+        run: |
+          echo "commit_id=$(cat ./.github/files/SIDEBARCOMMIT)" >> $GITHUB_OUTPUT
     outputs:
       current_step: ${{ steps.get_step.outputs.current_step }}
+      commit_id: ${{ steps.get_commit_id.outputs.commit_id }}
 
   on_fix_the_sidebar_issue_comment:
     name: Check if the issue comment is referencing the correct commit ID
@@ -61,7 +65,7 @@ jobs:
         run: echo '${{ toJSON(github.event.issue) }}'
 
       - name: Check if the issue comment is referencing the required commit ID
-        if: contains(github.event.comment.body, needs.find_commit_id.outputs.find_commit_id)
+        if: contains(github.event.comment.body, needs.get_current_step.outputs.commit_id)
         run: echo 'Found the reference to required commit in the comment'
 
       # Update README from step 2 to step 3.
