@@ -7,7 +7,7 @@
 
 _Congratulations friend, you've completed this course! :tada:_
 
-<img src=https://octodex.github.com/images/collabocats.jpg alt=celebrate width=300 align=right>
+<img src="https://octodex.github.com/images/collabocats.jpg" alt=celebrate width=300 align=right>
 
 In this course, you've learned a lot about finding and sharing information. Within a GitHub repository, you can find history about what changes were made, and more importantly, _why_ changes were made.
 
