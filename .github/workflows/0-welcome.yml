@@ -80,8 +80,8 @@ jobs:
             echo "Current step is not 0"
             exit 0
           fi
-          git config user.name github-actions
-          git config user.email github-actions@github.com
+          git config user.name github-actions[bot]
+          git config user.email github-actions[bot]@users.noreply.github.com
           git checkout main
           echo "Update _sidebar.md for the 1st time"
           cp -f .github/files/_sidebar01.md docs/_sidebar.md
