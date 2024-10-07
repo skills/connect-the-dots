@@ -58,11 +58,15 @@ jobs:
 
       - name: Dump GitHub comment context
         id: github_comment_step
-        run: echo '${{ toJSON(github.event.comment) }}'
+        env:
+          COMMENT_CONTEXT: ${{ toJSON(github.event.comment) }}
+        run: echo "$COMMENT_CONTEXT"
 
       - name: Dump GitHub issue context
         id: github_issue_step
-        run: echo '${{ toJSON(github.event.issue) }}'
+        env:
+          ISSUE_CONTEXT: ${{ toJSON(github.event.issue) }}
+        run: echo "$ISSUE_CONTEXT"
 
       - name: Check if the issue comment is referencing the required commit ID
         if: contains(github.event.comment.body, needs.get_current_step.outputs.commit_id)
