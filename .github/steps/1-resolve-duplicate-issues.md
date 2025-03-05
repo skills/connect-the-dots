@@ -14,7 +14,7 @@ GitHub has special capabilities to help reference other information on GitHub. F
 
 ![a screenshot of an issue linking to a PR, and a PR with a cross-reference to the issue](https://user-images.githubusercontent.com/6351798/172456846-2daec570-08b0-4ffa-a7cb-41acc50b836e.png)
 
-With collaboraration from multiple team members, sometimes issues can be duplicated. In the above example, the new issue `#8346` is a duplicate of a previous issue `#8249`. The cross-reference ability allows you to track these duplications and close issues when appropriate.
+With collaboration from multiple team members, sometimes issues can be duplicated. In the above example, the new issue `#8346` is a duplicate of a previous issue `#8249`. The cross-reference ability allows you to track these duplications and close issues when appropriate.
 
 ### Creating references
 
