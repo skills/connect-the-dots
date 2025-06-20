@@ -21,7 +21,7 @@ You can enable GitHub Pages and see `docs/index.html` as a website!
 1. In the **GitHub Pages** section, select `main` in the **Select branch** drop-down menu and `/docs` in the **Select folder** drop-down menu.
 1. Click the **Save** button.
 1. Wait about 30 seconds then refresh the page. When you see "Your site is published at ...," you can click on the link to see your published site.
-
+full_repo_name
 Check out these resources to learn more or get involved:
 
 - Are you a student? Check out the [Student Developer Pack](https://education.github.com/pack).
