@@ -1,77 +1,77 @@
 name: Step 0, Welcome
 
-# This step listens for the learner pushing a commit to `main`.
-# This workflow updates from step 0 to step 1.
-
-# This will run every time we push a commit to `main`.
-# Reference: https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
 on:
   workflow_dispatch:
+  # NOTE: Disable push trigger until templated
   push:
     branches:
       - main
 
 permissions:
   contents: write
-  pull-requests: write
+  actions: write
   issues: write
 
+env:
+  STEP_1_FILE: ".github/steps/1-resolve-duplicate-issues.md"
+
 jobs:
-  # Get the current step to only run the main job when the learner is on the same step.
-  get_current_step:
-    name: Check current step number
+  start_exercise:
+    if: |
+      !github.event.repository.is_template
+    name: Start Exercise
+    uses: skills/exercise-toolkit/.github/workflows/start-exercise.yml@v0.3.0
+    with:
+      exercise-title: "Connect the Dots"
+      intro-message: "Learn to navigate a GitHub repository effectively."
+
+  post_next_step_content:
+    name: Post next step content
     runs-on: ubuntu-latest
+    needs: [start_exercise]
+    env:
+      ISSUE_URL: ${{ needs.start_exercise.outputs.issue-url }}
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - id: get_step
-        run: |
-          echo "current_step=$(cat ./.github/steps/-step.txt)" >> $GITHUB_OUTPUT
-    outputs:
-      current_step: ${{ steps.get_step.outputs.current_step }}
 
-  on_start:
-    name: On start
-    needs: get_current_step
-
-    # We will only run this action when:
-    # 1. This repository isn't the template repository.
-    # 2. The step is currently 0.
-    # Reference: https://docs.github.com/en/actions/learn-github-actions/contexts
-    # Reference: https://docs.github.com/en/actions/learn-github-actions/expressions
-    if: >-
-      ${{ !github.event.repository.is_template
-          && needs.get_current_step.outputs.current_step == 0 }}
-
-    # We'll run Ubuntu for performance instead of Mac or Windows.
-    runs-on: ubuntu-latest
-
-    steps:
-      # We'll need to check out the repository so that we can edit the README.
-      - name: Checkout
+      - name: Get response templates
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Let's get all the branches.
+          repository: skills/exercise-toolkit
+          path: exercise-toolkit
+          ref: v0.3.0
 
-      # This is required to establish related issues
-      # after being created from the template repository.
-      - name: Prepare issues
-        run: |
-          echo "Make sure we are on step 0"
-          if [ "$(cat .github/steps/-step.txt)" != 0 ]
-          then
-            echo "Current step is not 0"
-            exit 0
-          fi
-          echo "Create issue #1 from file"
-          gh issue create --title "Welcome" -F .github/files/issue01.md
-          echo "Create issue #2 from file"
-          gh issue create --title "Fix the sidebar" -F .github/files/issue02.md
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Create 'Fix broken sidebar' issue (target for duplicate)
+        id: issue_a
+        uses: actions/github-script@v7
+        with:
+          result-encoding: string
+          script: |
+            const { data: issue } = await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: "Fix the broken sidebar",
+              body: "The sidebar in `docs/_sidebar.md` is broken and needs fixing."
+            });
+            core.setOutput("original_issue", issue.number);
 
-      # This is required to create a relevant history for docs/_sidebar.md
-      # after being created from the template repository.
+      - name: Create 'Duplicate report' issue (to be closed as duplicate)
+        id: issue_b
+        uses: actions/github-script@v7
+        with:
+          result-encoding: string
+          script: |
+            const { data: issue } = await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: "Sidebar bug again",
+              body: "Looks like the sidebar bug was already reported."
+            });
+            core.setOutput("duplicate_issue", issue.number);
+
+
       - name: Prepare files history
         run: |
           echo "Make sure we are on step 0"
@@ -87,7 +87,8 @@ jobs:
           cp -f .github/files/_sidebar01.md docs/_sidebar.md
           git add docs/_sidebar.md
           git commit -m "updated _sidebar.md"
-          git push
+          git pull --rebase origin main || true
+          git push || true
           echo "update _sidebar.md for the 2nd time"
           cp -f .github/files/_sidebar02.md docs/_sidebar.md
           git add docs/_sidebar.md
@@ -101,10 +102,34 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # Update README from step 0 to step 1.
-      - name: Update to step 1
-        uses: skills/action-update-step@v2
+
+      - name: Build comment - add step content
+        id: build-comment
+        uses: skills/action-text-variables@v1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          from_step: 0
-          to_step: 1
+          template-file: ${{ env.STEP_1_FILE }}
+          template-vars: |
+            full_repo_name=${{ github.repository }}
+            original_issue=${{ steps.issue_a.outputs.original_issue }}
+            duplicate_issue=${{ steps.issue_b.outputs.duplicate_issue }}
+
+      - name: Create comment - add step content
+        run: |
+          gh issue comment "$ISSUE_URL" \
+            --body "$ISSUE_BODY"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_BODY: ${{ steps.build-comment.outputs.updated-text }}
+
+      - name: Create comment - watching for progress
+        run: |
+          gh issue comment "$ISSUE_URL" \
+            --body-file exercise-toolkit/markdown-templates/step-feedback/watching-for-progress.md
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Enable next step workflow
+        run: |
+          gh workflow enable "Step 1, Resolve duplicate issues"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
