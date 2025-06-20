@@ -27,7 +27,7 @@ When you're looking at a commit on GitHub, you can see a lot of information. Fro
 
 ### :keyboard: Activity: Fix a broken sidebar
 
-1. In the main branch [Edit the `docs/_sidebar.md` file](/docs/_sidebar.md).
+1. In the main branch Edit the [`/docs/_sidebar.md`](../blob/main/docs/_sidebar.md) file.
 2. Correct the spelling of the reference `(doc-references__.md)` on line 4 by changing it into `(doc-references.md)`.
 3. Select or create a new branch `fix-sidebar` for this commit and start a pull request.
 4. Make sure that **main** is selected for **base:** and **fix-sidebar** for **compare:**.
