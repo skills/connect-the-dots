@@ -7,7 +7,6 @@ name: Step 1, Resolve duplicate issues
 # Reference: https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
 
 on:
-  workflow_dispatch:
   issue_comment:
     types: [created, edited]
 
@@ -15,64 +14,118 @@ permissions:
   # Need `contents: read` to checkout the repository.
   # Need `contents: write` to update the step metadata.
   contents: write
+  actions: write
+  issues: write 
 
+env: 
+  STEP_2_FILE: ".github/steps/2-find-commit-in-history.md"
+  
 jobs:
-  # Get the current step to only run the main job when the learner is on the same step.
-  get_current_step:
-    name: Check current step number
+  find_exercise:
+    name: Find Exercise Issue
+    # We'll use the skills/exercise-toolkit to find the exercise issue.
+    uses: skills/exercise-toolkit/.github/workflows/find-exercise-issue.yml@v0.3.0
+
+  check_step_work:
+    name: Check step work
     runs-on: ubuntu-latest
+    needs: [find_exercise]
+    if: |
+      !github.event.repository.is_template
+    env:
+      ISSUE_URL: ${{ needs.find_exercise.outputs.issue-url }}
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - id: get_step
+
+      # Get the response templates from the exercise-toolkit repository.
+      - name: Get response templates
+        uses: actions/checkout@v4
+        with:
+          repository: skills/exercise-toolkit
+          path: exercise-toolkit
+          ref: v0.3.0
+      
+      - name: Update comment - checking work
         run: |
-          echo "current_step=$(cat ./.github/steps/-step.txt)" >> $GITHUB_OUTPUT
-    outputs:
-      current_step: ${{ steps.get_step.outputs.current_step }}
+          gh issue comment "$ISSUE_URL" \
+            --body-file exercise-toolkit/markdown-templates/step-feedback/checking-work.md \
+            --edit-last
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  on_duplicate_issue_closed:
-    name: Check if duplicate issue is marked as duplicate
-    needs: get_current_step
-
-    # We will only run this action when:
-    # 1. This repository isn't the template repository.
-    # 2. The step is currently 1.
-    # Reference: https://docs.github.com/en/actions/learn-github-actions/contexts
-    # Reference: https://docs.github.com/en/actions/learn-github-actions/expressions
-    if: >-
-      ${{ !github.event.repository.is_template
-          && needs.get_current_step.outputs.current_step == 1 }}
-
-    # We'll run Ubuntu for performance instead of Mac or Windows.
+  verify_step_work:
+    name: Verify step work
     runs-on: ubuntu-latest
+    needs: [find_exercise, check_step_work]
+    env:
+      ISSUE_URL: ${{ needs.find_exercise.outputs.issue-url }}
+    outputs:
+      keywords_found: ${{ steps.check_keywords.outputs.keywords_found }}
 
     steps:
       # We'll need to check out the repository so that we can edit the README.
       - name: Checkout
         uses: actions/checkout@v4
+
+
+      - name: Check for keywords in issue comment
+        id: check_keywords
+        uses: actions/github-script@v7
         with:
-          fetch-depth: 0 # Let's get all the branches.
+          result-encoding: string
+          script: |
+            const commentBody = context.payload.comment ? context.payload.comment.body : "";
+            const issueState = context.payload.issue ? context.payload.issue.state : "";
 
-      - name: Dump GitHub comment context
-        id: github_comment_step
-        env:
-          COMMENT_CONTEXT: ${{ toJSON(github.event.comment) }}
-        run: echo "$COMMENT_CONTEXT"
+            // Normalize whitespace and case for robust matching
+            const normalizedBody = commentBody.trim().toLowerCase();
+            let found = "false";
+            if (normalizedBody.startsWith("duplicate of") || (normalizedBody.includes("duplicate") && normalizedBody.includes("#"))) {
+              found = "true";
+            }
+            core.setOutput("keywords_found", found);
+            core.debug(`Comment body: ${commentBody}, Issue state: ${issueState}, Keywords found: ${found}`);
 
-      - name: Dump GitHub issue context
-        id: github_issue_step
-        env:
-          ISSUE_CONTEXT: ${{ toJSON(github.event.issue) }}
-        run: echo "$ISSUE_CONTEXT"
+  post_next_step_content:
+    name: Post next step content
+    needs: [find_exercise, check_step_work, verify_step_work]
+    runs-on: ubuntu-latest
 
-      - name: Check if commented issue is closed and marked as duplicate
-        if: ${{ contains(github.event.comment.body, 'Duplicate of') && (github.event.issue.state == 'closed')}}
-        run: echo 'Duplicate issue closed'
+    if: needs.verify_step_work.outputs.keywords_found == 'true'
+    env:
+      ISSUE_URL: ${{ needs.find_exercise.outputs.issue-url }}
 
-      # Update README from step 1 to step 2.
-      - name: Update to step 2
-        uses: skills/action-update-step@v2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Get response templates
+        uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          from_step: 1
-          to_step: 2
+          repository: skills/exercise-toolkit
+          path: exercise-toolkit
+          ref: v0.3.0
+
+      - name: Create comment - add step content
+        run: |
+          gh issue comment "$ISSUE_URL" \
+            --body-file ${{ env.STEP_2_FILE }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create comment - watching for progress
+        run: |
+          gh issue comment "$ISSUE_URL" \
+            --body-file exercise-toolkit/markdown-templates/step-feedback/watching-for-progress.md
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Disable current workflow and enable next one
+        run: |
+          gh workflow disable "Step 1, Resolve duplicate issues"
+          gh workflow enable "Step 2, Find commit in history"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
