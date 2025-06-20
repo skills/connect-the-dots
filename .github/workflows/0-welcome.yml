@@ -1,8 +1,6 @@
 name: Step 0, Welcome
 
 on:
-  workflow_dispatch:
-  # NOTE: Disable push trigger until templated
   push:
     branches:
       - main
