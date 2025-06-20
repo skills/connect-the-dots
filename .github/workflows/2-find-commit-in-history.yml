@@ -1,4 +1,4 @@
-name: Step 2, Find a commit in history
+name: Step 2, Find commit in history
 
 # This step listens for the learner creating or editing an issue comment.
 # This workflow updates from step 2 to step 3.
@@ -6,7 +6,6 @@ name: Step 2, Find a commit in history
 # This will run every time we create or edit an issue comment.
 # Reference: https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
 on:
-  workflow_dispatch:
   issue_comment:
     types: [created, edited]
 
@@ -14,12 +13,55 @@ permissions:
   # Need `contents: read` to checkout the repository.
   # Need `contents: write` to update the step metadata.
   contents: write
+  actions: write
+  issues: write
+
+env:
+  STEP_3_FILE: ".github/steps/3-fix-broken-sidebar.md"
 
 jobs:
+  find_exercise:
+    name: Find Exercise Issue
+    # We'll use the skills/exercise-toolkit to find the exercise issue.
+    uses: skills/exercise-toolkit/.github/workflows/find-exercise-issue.yml@v0.3.0
+
+  check_step_work:
+    name: Check step work
+    runs-on: ubuntu-latest
+    needs: find_exercise
+    if: |
+      !github.event.repository.is_template
+    env:
+      ISSUE_URL: ${{ needs.find_exercise.outputs.issue-url }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Get the response templates from the exercise-toolkit repository.
+      - name: Get response templates
+        uses: actions/checkout@v4
+        with:
+          repository: skills/exercise-toolkit
+          path: exercise-toolkit
+          ref: v0.3.0
+
+      - name: Update comment - checking work
+        run: |
+          gh issue comment "$ISSUE_URL" \
+            --body-file exercise-toolkit/markdown-templates/step-feedback/checking-work.md \
+            --edit-last
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   # Get the current step to only run the main job when the learner is on the same step.
   get_current_step:
     name: Check current step number
     runs-on: ubuntu-latest
+    outputs:
+      current_step: ${{ steps.get_step.outputs.current_step }}
+      commit_id: ${{ steps.get_commit_id.outputs.commit_id }}
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -28,26 +70,17 @@ jobs:
           echo "current_step=$(cat ./.github/steps/-step.txt)" >> $GITHUB_OUTPUT
       - id: get_commit_id
         run: |
-          echo "commit_id=$(cat ./.github/files/SIDEBARCOMMIT)" >> $GITHUB_OUTPUT
-    outputs:
-      current_step: ${{ steps.get_step.outputs.current_step }}
-      commit_id: ${{ steps.get_commit_id.outputs.commit_id }}
+          echo "commit_id=$(cat .github/files/SIDEBARCOMMIT)" >> $GITHUB_OUTPUT
+
 
   on_fix_the_sidebar_issue_comment:
     name: Check if the issue comment is referencing the correct commit ID
-    needs: get_current_step
-
-    # We will only run this action when:
-    # 1. This repository isn't the template repository.
-    # 2. The step is currently 2.
-    # Reference: https://docs.github.com/en/actions/learn-github-actions/contexts
-    # Reference: https://docs.github.com/en/actions/learn-github-actions/expressions
-    if: >-
-      ${{ !github.event.repository.is_template
-          && needs.get_current_step.outputs.current_step == 2 }}
-
-    # We'll run Ubuntu for performance instead of Mac or Windows.
     runs-on: ubuntu-latest
+    needs: [find_exercise, get_current_step]
+
+    # We'll run this job only when the learner is on step 2.
+    if: >-
+      ${{ !github.event.repository.is_template && needs.get_current_step.outputs.commit_id != '' }}
 
     steps:
       # We'll need to check out the repository so that we can edit the README.
@@ -72,10 +105,41 @@ jobs:
         if: contains(github.event.comment.body, needs.get_current_step.outputs.commit_id)
         run: echo 'Found the reference to required commit in the comment'
 
-      # Update README from step 2 to step 3.
-      - name: Update to step 3
-        uses: skills/action-update-step@v2
+  post_next_step_content:
+    name: Post next step content
+    needs: [find_exercise, check_step_work, get_current_step, on_fix_the_sidebar_issue_comment]
+    runs-on: ubuntu-latest
+    env:
+      ISSUE_URL: ${{ needs.find_exercise.outputs.issue-url }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Get response templates
+        uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          from_step: 2
-          to_step: 3
+          repository: skills/exercise-toolkit
+          path: exercise-toolkit
+          ref: v0.1.0
+
+      - name: Create comment - add step content
+        run: |
+          gh issue comment "$ISSUE_URL" \
+            --body-file ${{ env.STEP_3_FILE }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create comment - watching for progress
+        run: |
+          gh issue comment "$ISSUE_URL" \
+            --body-file exercise-toolkit/markdown-templates/step-feedback/watching-for-progress.md
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Disable current workflow and enable next one
+        run: |
+          gh workflow disable "Step 2, Find commit in history"
+          gh workflow enable "Step 3, Fix broken sidebar"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
