@@ -24,6 +24,6 @@ When you want to create a crosslink, start typing the title of an issue or pull 
 
 ### :keyboard: Activity: Find and close the cross-linked issue
 
-1. Navigate to the issue #1 (Welcome)
-2. Type "Duplicate of #2" as a comment and close issue #1
+1. Navigate to the issue #{{duplicate_issue}} (Welcome)
+2. Type "Duplicate of #{{original_issue}}" as a comment and close issue #{{duplicate_issue}}
 3. Wait about 20 seconds then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/en/actions) will automatically update to the next step.
